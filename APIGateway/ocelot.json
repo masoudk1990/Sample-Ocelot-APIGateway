@@ -10,7 +10,11 @@
         }
       ],
       "UpstreamPathTemplate": "/customers",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "TestKey",
+        "AllowedScopes": []
+      }
     },
     {
       "DownstreamPathTemplate": "/api/customers/{id}",
@@ -37,6 +41,16 @@
       "UpstreamHttpMethod": [ "Get" ]
     }
   ],
+  "DownstreamPathTemplate": "/api/auth",
+  "DownstreamScheme": "https",
+  "DownstreamHostAndPorts": [
+    {
+      "Host": "localhost",
+      "Port": 44358
+    }
+  ],
+  "UpstreamPathTemplate": "/api/auth",
+  "UpstreamHttpMethod": [ "Get" ],
   "GlobalConfiguration": {
     "RequestIdKey": "OcRequestId",
     "AdministrationPath": "/administration"

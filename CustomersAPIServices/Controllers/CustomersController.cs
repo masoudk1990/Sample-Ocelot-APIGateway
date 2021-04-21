@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace CustomersAPIServices.Controllers
@@ -7,6 +8,7 @@ namespace CustomersAPIServices.Controllers
     [ApiController]
     public class CustomersController : ControllerBase
     {
+        [Authorize]
         [HttpGet]
         public IEnumerable<string> Get()
         {

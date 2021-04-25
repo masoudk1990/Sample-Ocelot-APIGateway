@@ -5,9 +5,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using NLog;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using System;
+using System.IO;
 using System.Text;
 
 namespace APIGateway
@@ -16,10 +18,13 @@ namespace APIGateway
     {
 
         public IConfiguration Configuration { get; }
+        private static Logger _logger;
 
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            LogManager.LoadConfiguration(string.Concat(Directory.GetCurrentDirectory(), "/nlog.config"));
+            _logger = LogManager.GetCurrentClassLogger();
         }
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -52,11 +57,21 @@ namespace APIGateway
             });
 
             services.AddOcelot(Configuration);
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public async void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
+            //nlog logging
+            app.Use(async (context, next) =>
+            {
+                string log = $"Request:{context.Request.Method}-{context.Request.Path.Value}";
+                await next.Invoke();
+                log += $"|Response:{context.Response.StatusCode}";
+                _logger.Debug(log);
+            });
 
             await app.UseOcelot();
 

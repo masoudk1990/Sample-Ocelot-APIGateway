@@ -24,14 +24,13 @@ namespace ClientApp
             var resWithToken = client.GetAsync("/customers").Result;
             Console.WriteLine(resWithToken.Content.ReadAsStringAsync().Result);
 
-
             Console.Read();
         }
 
         private static string GetJwt()
         {
             HttpClient client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44358");
+            client.BaseAddress = new Uri("https://localhost:44340");
             client.DefaultRequestHeaders.Clear();
             var res2 = client.GetAsync("/api/auth?name=masoud&pwd=123456").Result;
             dynamic jwt = JsonConvert.DeserializeObject(res2.Content.ReadAsStringAsync().Result);

@@ -9,9 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway", "APIGateway\AP
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsAPIServices", "ProductsAPIServices\ProductsAPIServices.csproj", "{48534513-239D-4EA7-BD15-E074C423063E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthServer", "AuthServer\AuthServer.csproj", "{47102C5F-389F-49B4-8B0B-38BD4A0112E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthServer", "AuthServer\AuthServer.csproj", "{47102C5F-389F-49B4-8B0B-38BD4A0112E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientApp", "ClientApp\ClientApp.csproj", "{E7DAD829-3C82-44C8-8E35-0CB843D6C68F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClientApp", "ClientApp\ClientApp.csproj", "{E7DAD829-3C82-44C8-8E35-0CB843D6C68F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIServiceA", "APIServiceA\APIServiceA.csproj", "{0935DC25-ADC4-4E92-9D7A-AD00A80AD53A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIServiceB", "APIServiceB\APIServiceB.csproj", "{68B9E78A-4462-4AC2-B51A-85BAEB41E876}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{E7DAD829-3C82-44C8-8E35-0CB843D6C68F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E7DAD829-3C82-44C8-8E35-0CB843D6C68F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E7DAD829-3C82-44C8-8E35-0CB843D6C68F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0935DC25-ADC4-4E92-9D7A-AD00A80AD53A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0935DC25-ADC4-4E92-9D7A-AD00A80AD53A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0935DC25-ADC4-4E92-9D7A-AD00A80AD53A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0935DC25-ADC4-4E92-9D7A-AD00A80AD53A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68B9E78A-4462-4AC2-B51A-85BAEB41E876}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68B9E78A-4462-4AC2-B51A-85BAEB41E876}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68B9E78A-4462-4AC2-B51A-85BAEB41E876}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68B9E78A-4462-4AC2-B51A-85BAEB41E876}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

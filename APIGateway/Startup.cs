@@ -8,6 +8,7 @@ using Microsoft.IdentityModel.Tokens;
 using NLog;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
+using Ocelot.Provider.Polly;
 using System;
 using System.IO;
 using System.Text;
@@ -56,7 +57,7 @@ namespace APIGateway
                 };
             });
 
-            services.AddOcelot(Configuration);
+            services.AddOcelot(Configuration).AddPolly();
 
         }
 
